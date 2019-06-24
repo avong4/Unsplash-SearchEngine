@@ -2,12 +2,18 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import ImageList from './ImageList';
 
-const App = () => {
+class App extends React.Component {
+
+    onSearchSubmit = (term) => {
+        console.log(term);
+    }
+    render(){
     return (
     <div className = "ui container" style = {{marginTop: '10px'}}>
-        <SearchBar/>
+        <SearchBar onSubmit={this.onSearchSubmit}/>
         <ImageList/>
     </div>);
+    }
 }
 
 export default App;
